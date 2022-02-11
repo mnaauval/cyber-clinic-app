@@ -1,16 +1,16 @@
 import React from "react";
 
 const Register = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <div class="h-full flex justify-center md:items-center md:flex-row flex-col mt-10">
       <div class="relative px-4 w-full max-w-4xl h-full md:h-auto">
         {/* <!-- Modal content --> */}
         <div class="relative bg-white rounded-lg ">
-          <form class="md:px-6 px-2 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" onSubmit={handleSubmit}>
+          <form class="md:px-6 px-2 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8">
             <h3 class="text-xl font-medium text-gray-900 ">Registrasi Pasien</h3>
             <div>
               <label for="full_name" class="block mb-2 text-sm font-medium text-gray-900 ">
