@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useRegister = (callback, validate) => {
+const useLogin = (callback, validate) => {
   const [values, setValues] = useState({
-    full_name: "",
-    phone: "",
-    place: "",
-    address: "",
-    post_code: "",
-    message: "",
+    username: "",
+    email: "",
+    password: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -20,20 +17,29 @@ const useRegister = (callback, validate) => {
     });
   };
 
+  const handleLogin = (value) => {
+    if (values.email === "admin@admin.com" && values.password === "admin123") {
+      alert("Login Sukses");
+      setIsSubmitting(true);
+    } else {
+      alert("Login Gagal");
+      setIsSubmitting(false);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
-    setIsSubmitting(true);
+    handleLogin(values);
   };
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting === true) {
       callback();
-      alert("Register Sukses");
     }
   });
 
   return { handleChange, values, handleSubmit, errors };
 };
 
-export default useRegister;
+export default useLogin;

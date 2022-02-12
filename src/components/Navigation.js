@@ -34,7 +34,7 @@ const Navigation = () => {
               </li>
             ))}
             <button type="button" className="block md:mt-0 mt-3 bg-cover bg-accent rounded-lg text-white font-medium hover:bg-accent4">
-              <a href="/login" className="inline-block py-2 px-4">
+              <a href="/login" className="md:inline-block block py-2 px-4">
                 LOGIN
               </a>
             </button>

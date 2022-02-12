@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useForm = (callback, validate) => {
+const useContact = (validate) => {
   const [values, setValues] = useState({
-    username: "",
-    email: "",
-    password: "",
+    floating_first_name: "",
+    floating_last_name: "",
+    floating_email: "",
+    floating_subject_msg: "",
+    floating_msg: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,30 +19,20 @@ const useForm = (callback, validate) => {
     });
   };
 
-  const handleLogin = (value) => {
-    if (values.email === "admin@admin.com" && values.password === "admin123") {
-      alert("Login Successful");
-      setIsSubmitting(true);
-    } else {
-      alert("Login Failed");
-      setIsSubmitting(false);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
-    handleLogin(values);
+    setIsSubmitting(true);
   };
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting === true) {
-      callback();
-      //   console.log(callback);
+      alert("Pesan Terkirim");
+      window.location.reload();
     }
   });
 
   return { handleChange, values, handleSubmit, errors };
 };
 
-export default useForm;
+export default useContact;
