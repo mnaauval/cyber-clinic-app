@@ -13,10 +13,10 @@ const Medication = () => {
           </form>
           <div className="relative inline-block ml-5">
             <div>
-              <button type="button" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-2 py-2.5 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
-                <div className="text-xl flex items-center">
+              <button type="button" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-1 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
+                <div className="text-xl">
                   <ion-icon name="cart-outline"></ion-icon>
-                  <p className="inline-block text-sm">{10}</p>
+                  <p className="inline-block text-xs absolute left-4 top-1.5 bg-accent rounded-md text-white px-0.5">{10}</p>
                   <ion-icon name="chevron-down-outline"></ion-icon>
                 </div>
               </button>
