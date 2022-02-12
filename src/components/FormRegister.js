@@ -23,19 +23,19 @@ const FormRegister = ({ submitForm }) => {
               <p class="block mb-2 text-sm font-medium text-gray-900 ">Jenis Kelamin</p>
               <div class="flex items-center mb-2">
                 <input id="male" type="radio" name="gender" value="Laki-laki" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-accent" required />
-                <label htmlfor="male" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label htmlfor="male" class="block ml-2 text-sm font-medium text-gray-900 ">
                   Laki-laki
                 </label>
               </div>
               <div class="flex items-center mb-2">
                 <input id="female" type="radio" name="gender" value="Perempuan" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-accent" />
-                <label htmlfor="female" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label htmlfor="female" class="block ml-2 text-sm font-medium text-gray-900 ">
                   Perempuan
                 </label>
               </div>
               <div class="flex items-center mb-2">
                 <input id="other" type="radio" name="gender" value="Lainnya" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-accent" />
-                <label htmlfor="other" class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                <label htmlfor="other" class="block ml-2 text-sm font-medium text-gray-900 ">
                   Lainnya
                 </label>
               </div>

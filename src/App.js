@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import Register from "./components/Register";
+import Medication from "./components/medication/Medication";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* <Route path="/about" element={<About />} /> */}
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/medication" element={<Medication />} />
         {/* <Route path="*" element={<ErrorPage />} /> */}
       </Routes>
       <Footer />
