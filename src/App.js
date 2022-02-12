@@ -7,7 +7,7 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import Register from "./components/Register";
-import Medication from "./components/medication/Medication";
+import Medication from "./components/Medication";
 
 function App() {
   return (
