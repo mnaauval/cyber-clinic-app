@@ -2,7 +2,7 @@ import React from "react";
 import useLogin from "../utilities/useLogin";
 import validateLogin from "../utilities/validateLogin";
 
-const FormLogin = ({ submitForm }) => {
+const LoginForm = ({ submitForm }) => {
   const { handleChange, values, handleSubmit, errors } = useLogin(submitForm, validateLogin);
 
   return (
@@ -44,4 +44,4 @@ const FormLogin = ({ submitForm }) => {
   );
 };
 
-export default FormLogin;
+export default LoginForm;

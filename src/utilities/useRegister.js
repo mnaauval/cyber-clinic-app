@@ -1,9 +1,16 @@
+import faker from "@faker-js/faker";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addData } from "../features/dataPastient";
 
 const useRegister = (callback, validate) => {
+  const dispatch = useDispatch();
+
   const [values, setValues] = useState({
     full_name: "",
+    gender: "",
     phone: "",
+    age: "",
     place: "",
     address: "",
     post_code: "",
@@ -24,6 +31,19 @@ const useRegister = (callback, validate) => {
     e.preventDefault();
     setErrors(validate(values));
     setIsSubmitting(true);
+    dispatch(
+      addData({
+        id: faker.datatype.uuid(),
+        full_name: values.full_name,
+        gender: values.gender,
+        phone: values.phone,
+        age: values.age,
+        place: values.place,
+        address: values.address,
+        post_code: values.post_code,
+        message: values.message,
+      })
+    );
   };
 
   useEffect(() => {

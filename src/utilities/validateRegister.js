@@ -9,6 +9,10 @@ export default function validateRegister(values) {
     errors.phone = "Nomor telepon harus diisi";
   }
 
+  if (!values.age) {
+    errors.age = "Umur harus diisi";
+  }
+
   if (!values.place) {
     errors.place = "Tempat lahir harus diisi";
   }

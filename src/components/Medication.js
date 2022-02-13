@@ -1,44 +1,50 @@
-import { useState } from "react";
-import MedicationContent from "./MedicationContent";
-const Medication = () => {
-  const [showCart, setShowCart] = useState(false);
+import React from "react";
+import { useSelector } from "react-redux";
 
-  const handleClick = () => {
-    setShowCart(!showCart);
-  };
+const Medication = () => {
+  const registerData = useSelector((state) => state.register.value);
+
   return (
     <>
       <nav className="bg-accent2 px-4 py-2.5 w-full">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
-          <form className="flex border border-accent sm:w-96 w-auto rounded-md">
-            <input type="search" id="search_med" name="search_med" class="block p-2 w-full text-gray-900 bg-white rounded-lg  sm:text-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
+        <div className="container flex flex-wrap justify-center items-center mx-auto">
+          <form className="flex border border-accent sm:w-1/2 w-auto rounded-md">
+            <input type="search" id="search_med" name="search_med" className="block p-2 w-full text-gray-900 bg-white rounded-lg  sm:text-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Search..." />
             <button type="submit" className="w-[40px] overflow-hidden p-0 m-0  cursor-pointer ">
               <ion-icon name="search-outline"></ion-icon>
             </button>
           </form>
-          <div className="relative inline-block ml-5">
-            <div>
-              <button type="button" className="inline-flex justify-center w-full  px-1 pt-2 pb-1 bg-white rounded-md border border-gray-300 shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-accent" id="menu-button" aria-expanded="true" aria-haspopup="true" onClick={handleClick}>
-                <div className="text-xl">
-                  <ion-icon name="cart-outline"></ion-icon>
-                  <p className="inline-block text-xs absolute left-4 top-1.5 bg-accent rounded-md text-white px-0.5">{10}</p>
-                  <ion-icon name="chevron-down-outline"></ion-icon>
-                </div>
-              </button>
-            </div>
-            {showCart && (
-              <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                <div className="py-1" role="none">
-                  <span className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0">
-                    Cart is empty
-                  </span>
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       </nav>
-      <MedicationContent />
+      <div className="h-full flex justify-center md:items-center md:flex-row flex-col mt-10">
+        <div className="relative px-4 w-full max-w-4xl h-full md:h-auto">
+          {registerData.map((data) => {
+            return (
+              <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex sm:flex-row flex-col justify-between" key={data.id}>
+                <div className="">
+                  <p>{data.full_name}</p>
+                  <p>{data.age}</p>
+                  <p>{data.gender}</p>
+                </div>
+                <form className="flex flex-col items-center">
+                  <div className="flex flex-row max-h-20 items-center">
+                    <input type="text" name="drugs_name" id="drugs_name" className=" border border-gray-500 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1 mx-2" placeholder="Nama obat" />
+                    <input type="text" name="drugs_total" id="drugs_total" className=" border border-gray-500 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1 mx-2" placeholder="Jumlah" />
+                    <div>
+                      <input type="text" name="drugs_dose" id="drugs_dose" className=" border border-gray-500 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1 mx-2" placeholder="Dosis" />
+                      <p className="text-center">x</p>
+                      <input type="text" name="drugs_dose" id="drugs_dose" className=" border border-gray-500 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-1 mx-2" placeholder="Dosis" />
+                    </div>
+                  </div>
+                  <button type="submit" className="w-1/4 text-white bg-accent hover:bg-accent4 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm py-2 text-center mt-3">
+                    CHECKOUT
+                  </button>
+                </form>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 };

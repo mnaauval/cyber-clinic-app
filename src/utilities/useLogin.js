@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { login } from "../features/userLogin";
 
 const useLogin = (callback, validate) => {
+  const dispatch = useDispatch();
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -30,7 +33,16 @@ const useLogin = (callback, validate) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(validate(values));
-    handleLogin(values);
+    setIsSubmitting(true);
+    // handleLogin(values);
+    dispatch(
+      login({
+        username: values.username,
+        email: values.email,
+        password: values.password,
+        loggedIn: true,
+      })
+    );
   };
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FormRegister from "./FormRegister";
+import RegisterForm from "./RegisterForm";
 import Home from "./Home";
 
 const Register = () => {
@@ -9,7 +9,7 @@ const Register = () => {
     setIsSubmitted(true);
   }
 
-  return <>{!isSubmitted ? <FormRegister submitForm={submitForm} /> : <Home />}</>;
+  return <>{!isSubmitted ? <RegisterForm submitForm={submitForm} /> : <Home />}</>;
 };
 
 export default Register;

@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.css";
-import FormContact from "./FormContact";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
@@ -8,7 +8,7 @@ const Contact = () => {
       <h1 className="lg:text-5xl md:text-4xl text-3xl text-center mt-6">Hubungi Kami</h1>
       <iframe title="maps" src="https://www.google.com/maps/d/embed?mid=1kD4d0uI2A8cD_NiU1FOL8pkjuyg&ehbc=2E312F" className="h-[400px] w-full mt-6"></iframe>
       <div className="flex justify-center md:items-center md:flex-row flex-col mt-10">
-        <FormContact />
+        <ContactForm />
 
         <hr className="my-hr my-10 md:hidden" />
 
